@@ -7,7 +7,7 @@ indexRouter.use(bodyParser.json());
 indexRouter.route('/')
     .all((req, res, next) => {
         res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'text/html');
         next();
     })
     .get((req,res, next) => {
@@ -25,5 +25,5 @@ indexRouter.route('/')
         res.statusCode = 403;
         res.end("DELETE operation is not supported on /");
     })
-    
+
 module.exports = indexRouter;
