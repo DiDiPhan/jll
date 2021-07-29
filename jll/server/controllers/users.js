@@ -1,4 +1,4 @@
-const User = require('../../models/users')
+const User = require('../models/users')
 exports.signup = (req, res) => {
     User.findOne({ email: req.body.email})
         .exec((error, user) => {
