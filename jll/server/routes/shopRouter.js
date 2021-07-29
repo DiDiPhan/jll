@@ -7,7 +7,7 @@ shopRouter.use(bodyParser.json());
 shopRouter.route('/')
     .all((req, res, next) => {
         res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Type', 'text/html');
         next();
     })
     .get((req,res, next) => {
