@@ -40,7 +40,7 @@ const bookSchema = new mongoose.Schema({
     },
     format: { 
         type: String,
-        required: true
+        default: "Paperback",
     },
     description: {
         type: String,

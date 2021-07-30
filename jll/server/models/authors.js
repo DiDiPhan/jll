@@ -3,11 +3,12 @@ const authorSchema = new mongoose.Schema({
     name: { 
         type: String, 
         required: true, 
-        trim: true 
+        trim: true,
+        unique: true
     },
     nationality: { 
-        type: string,
-        required: true
+        type: String,
+        default: 'unknown'
     },
     books: {
         type: [String],
@@ -15,4 +16,5 @@ const authorSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Product', authorSchema);
+var Authors = mongoose.model('Author', authorSchema);
+module.exports = Authors;

@@ -29,6 +29,7 @@ shopRouter.route('/')
                 res.json(book);
             }, (err) => next(err))
             .catch((err) => next(err));
+        
     })
     .delete((req, res, next) => {
         Books.remove({})
@@ -114,7 +115,7 @@ shopRouter.route('/:bookID/reviews')
     })
     .put((req, res, next) => {
         res.statusCode = 403;
-        res.end('PUT operation not supported on /Books/'
+        res.end('PUT operation not supported on /shop/'
             + req.params.bookID + '/reviews');
     })
     .delete((req, res, next) => {
@@ -155,7 +156,7 @@ shopRouter.route('/:bookID/reviews/:reviewID')
                     return next(err);
                 }
                 else {
-                    err = new Error('Comment ' + req.params.reviewID + ' not found');
+                    err = new Error('Review ' + req.params.reviewID + ' not found');
                     err.status = 404;
                     return next(err);
                 }
@@ -164,7 +165,7 @@ shopRouter.route('/:bookID/reviews/:reviewID')
     })
     .post((req, res, next) => {
         res.statusCode = 403;
-        res.end('POST operation not supported on /Books/' + req.params.bookID
+        res.end('POST operation not supported on /shop/' + req.params.bookID
             + '/reviews/' + req.params.reviewID);
     })
     .put((req, res, next) => {
@@ -190,7 +191,7 @@ shopRouter.route('/:bookID/reviews/:reviewID')
                     return next(err);
                 }
                 else {
-                    err = new Error('Comment ' + req.params.reviewID + ' not found');
+                    err = new Error('Review ' + req.params.reviewID + ' not found');
                     err.status = 404;
                     return next(err);
                 }
@@ -215,7 +216,7 @@ shopRouter.route('/:bookID/reviews/:reviewID')
                     return next(err);
                 }
                 else {
-                    err = new Error('Comment ' + req.params.reviewID + ' not found');
+                    err = new Error('Review ' + req.params.reviewID + ' not found');
                     err.status = 404;
                     return next(err);
                 }
